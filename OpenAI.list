@@ -1,3 +1,5 @@
+DOMAIN-SUFFIX,deepseek.com
+DOMAIN-SUFFIX,deepseeksvc.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chat.openai.com
 DOMAIN-SUFFIX,api.openai.com
@@ -337,6 +339,3 @@ DOMAIN-SUFFIX,topview.ai
 DOMAIN-SUFFIX,deepwiki.com
 DOMAIN-SUFFIX,agent-context.org
 DOMAIN-SUFFIX,llmcms.org
-DOMAIN-SUFFIX,chat.deepseek.com
-DOMAIN-SUFFIX,deepseek.com
-DOMAIN-SUFFIX,api.deepseek.com
