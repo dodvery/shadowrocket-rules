@@ -1,0 +1,44 @@
+name: update-rules
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build OpenAI.list
+        run: |
+          python3 - <<'EOF'
+          import urllib.request, re
+          url = "https://raw.githubusercontent.com/chentaoinbox/surgeshield/main/rules/OpenAI.list"
+          src = urllib.request.urlopen(url, timeout=60).read().decode("utf-8")
+          extra = open("extra.list", encoding="utf-8").read().splitlines()
+          out, seen = [], set()
+          for line in src.splitlines() + extra:
+              s = line.split(" #", 1)[0].strip()
+              if not s or s.startswith("#"):
+                  continue
+              if not re.match(r"^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|IP-CIDR)\s*,", s):
+                  continue
+              if s in seen:
+                  continue
+              seen.add(s)
+              out.append(s)
+          open("OpenAI.list", "w", encoding="utf-8").write("\n".join(out) + "\n")
+          print("rules:", len(out))
+          EOF
+
+      - name: Commit if changed
+        run: |
+          git config user.name "rules-bot"
+          git config user.email "rules-bot@users.noreply.github.com"
+          git add OpenAI.list extra.list
+          git diff --cached --quiet || (git commit -m "update rules" && git push)
