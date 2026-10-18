@@ -340,3 +340,10 @@ DOMAIN-SUFFIX,llmcms.org
 DOMAIN-KEYWORD,deepseek
 DOMAIN-SUFFIX,deepseek.com
 DOMAIN-SUFFIX,deepseeksvc.com
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,alkalimining-pa.googleapis.com
+DOMAIN-SUFFIX,ogads-pa.googleapis.com
+DOMAIN-SUFFIX,content-push.googleapis.com
+DOMAIN-SUFFIX,geminiweb-pa.clients6.google.com
+DOMAIN-SUFFIX,signaler-pa.clients6.google.com
