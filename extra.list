@@ -37,3 +37,5 @@ DOMAIN-SUFFIX,openai.fund
 DOMAIN-SUFFIX,openai.org
 DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com
 DOMAIN-SUFFIX,stitch.withgoogle.com
+DOMAIN,signaler-pa.googleapis.com
+DOMAIN,drive-thirdparty.googleusercontent.com
